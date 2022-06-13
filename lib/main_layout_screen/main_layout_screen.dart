@@ -14,9 +14,30 @@ class MainLayoutScreen extends StatelessWidget {
               left: 0,
               right: 0,
               child: Container(
-                height: 120,
+                height: 100,
                 width: double.infinity,
-                color: Colors.redAccent,
+                color: const Color(0xff051094),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    IconButton(
+                      onPressed: () {},
+                      icon: const Padding(
+                        padding: EdgeInsets.symmetric(vertical: 10.0),
+                        child: Icon(Icons.arrow_back_outlined, color: Colors.white,),
+                      ),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.symmetric(/*horizontal: 80.0,*/ vertical: 20.0),
+                      child: Text(
+                        'My Accounts',
+                        style: TextStyle(fontSize: 16.0, color: Colors.white, fontWeight: FontWeight.w600),
+                      ),
+                    ),
+                    const Icon(Icons.abc, color: Colors.transparent,)
+                  ],
+                ),
               ),
             ),
             Positioned.fill(
@@ -25,9 +46,9 @@ class MainLayoutScreen extends StatelessWidget {
                 decoration: const BoxDecoration(
                   borderRadius: BorderRadius.only(
                     topRight: Radius.circular(20.0),
-                    topLeft: Radius.circular(20.0)
+                    topLeft: Radius.circular(20.0),
                   ),
-                  color: Colors.blueGrey
+                  color: Colors.white,
                 ),
               ),
             )
