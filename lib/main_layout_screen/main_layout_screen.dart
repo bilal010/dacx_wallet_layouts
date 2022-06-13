@@ -13,7 +13,7 @@ class MainLayoutScreen extends StatelessWidget {
               top: 0,
               left: 0,
               right: 0,
-              child: Container(
+              /*child: Container(
                 height: 100,
                 width: double.infinity,
                 color: const Color(0xff051094),
@@ -36,6 +36,31 @@ class MainLayoutScreen extends StatelessWidget {
                       ),
                     ),
                     const Icon(Icons.abc, color: Colors.transparent,)
+                  ],
+                ),
+              ),*/
+              child: Container(
+                padding: const EdgeInsets.only(top: 10.0, bottom: 10.0, left: 5.0),
+                height: 100,
+                width: double.infinity,
+                color: const Color(0xff051094),
+                child: Row(
+                  //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    IconButton(
+                      onPressed: () {},
+                      icon: const Icon(Icons.arrow_back_outlined, color: Colors.white,),
+                    ),
+                    const SizedBox(width: 25.0),
+                    const Padding(
+                      padding: EdgeInsets.symmetric(vertical: 15.0),
+                      child: Text(
+                        'My Accounts',
+                        style: TextStyle(fontSize: 16.0, color: Colors.white, fontWeight: FontWeight.w600),
+                      ),
+                    ),
+                    //const Icon(Icons.abc, color: Colors.transparent,)
                   ],
                 ),
               ),
