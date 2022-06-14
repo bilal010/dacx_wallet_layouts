@@ -9,8 +9,10 @@ class GetCards extends StatefulWidget {
 }
 
 class _GetCardsState extends State<GetCards> {
-  PageController controller =
-      PageController(initialPage: 0, viewportFraction: 0.9);
+  PageController controller = PageController(
+    initialPage: 0,
+    viewportFraction: 0.9,
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -28,6 +30,7 @@ class _GetCardsState extends State<GetCards> {
             pageSnapping: true,
             //padEnds: true,
             controller: controller,
+            physics: const BouncingScrollPhysics(),
             scrollDirection: Axis.horizontal,
             children: [
               Container(
@@ -48,7 +51,11 @@ class _GetCardsState extends State<GetCards> {
                     ),
                   ],
                 ),
-                child: selectCardContents('DACX Basic', '\$ 7.99/M', Colors.grey.shade300),
+                child: selectCardContents(
+                  'DACX Basic',
+                  '\$ 7.99/M',
+                  Colors.grey.shade300,
+                ),
               ),
               Container(
                 //clipBehavior: Clip.antiAliasWithSaveLayer,
@@ -68,7 +75,8 @@ class _GetCardsState extends State<GetCards> {
                     ),
                   ],
                 ),
-                child: selectCardContents('DACX Gold', '\$ 9.99/M', Colors.orangeAccent.shade400),
+                child: selectCardContents(
+                    'DACX Gold', '\$ 9.99/M', Colors.orangeAccent.shade400),
               ),
               Container(
                 //clipBehavior: Clip.antiAliasWithSaveLayer,
@@ -88,7 +96,8 @@ class _GetCardsState extends State<GetCards> {
                     ),
                   ],
                 ),
-                child: selectCardContents('DACX Platinum', '\$ 11.99/M', Colors.black),
+                child: selectCardContents(
+                    'DACX Platinum', '\$ 11.99/M', Colors.black),
               ),
             ],
           ),
@@ -97,7 +106,8 @@ class _GetCardsState extends State<GetCards> {
     );
   }
 
-  Widget selectCardContents(String cardType, String monthlyAmount, Color color) {
+  Widget selectCardContents(
+      String cardType, String monthlyAmount, Color color) {
     return Container(
       padding: const EdgeInsets.all(10.0),
       child: Column(
