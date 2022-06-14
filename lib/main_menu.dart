@@ -1,3 +1,4 @@
+import 'package:dacx_wallet_layouts/main_layout_screen/get_cards.dart';
 import 'package:dacx_wallet_layouts/main_layout_screen/main_layout_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +17,6 @@ class MainMenu extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-
               ElevatedButton(
                 onPressed: () {
                   Navigator.push(
@@ -27,6 +27,17 @@ class MainMenu extends StatelessWidget {
                   );
                 },
                 child: const Text('Main Layout Screen'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const GetCards(),
+                    ),
+                  );
+                },
+                child: const Text('Get Cards'),
               ),
 
             ],
