@@ -89,8 +89,7 @@ class _CurrentBalanceMainScreenLayoutState
                             color: Colors.grey.withOpacity(0.4),
                             spreadRadius: 0, // extend the shadow
                             blurRadius: 5, // soften the shadow
-                            offset: const Offset(
-                                0, 0), // changes position of shadow
+                            offset: const Offset(0, 0), // changes position of shadow
                           ),
                         ],
                       ),

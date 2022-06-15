@@ -47,7 +47,10 @@ class CustomizableMainScreenLayout extends StatelessWidget {
                             fontWeight: FontWeight.w600),
                       ),
                     ),
-                    //const Icon(Icons.abc, color: Colors.transparent,)
+                    /*IconButton(
+                      onPressed: () {},
+                      icon: Icon(icon, color: Colors.white),
+                    ),*/
                   ],
                 ),
               ),
