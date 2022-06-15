@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 
-
 class CurrentBalanceMainScreenLayout extends StatefulWidget {
   const CurrentBalanceMainScreenLayout({Key? key}) : super(key: key);
 
   @override
-  State<CurrentBalanceMainScreenLayout> createState() => _CurrentBalanceMainScreenLayoutState();
+  State<CurrentBalanceMainScreenLayout> createState() =>
+      _CurrentBalanceMainScreenLayoutState();
 }
 
-class _CurrentBalanceMainScreenLayoutState extends State<CurrentBalanceMainScreenLayout> {
+class _CurrentBalanceMainScreenLayoutState
+    extends State<CurrentBalanceMainScreenLayout> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -20,27 +21,39 @@ class _CurrentBalanceMainScreenLayoutState extends State<CurrentBalanceMainScree
               left: 0,
               right: 0,
               child: Container(
-                padding: const EdgeInsets.only(top: 10.0, bottom: 10.0, left: 5.0),
+                padding: const EdgeInsets.only(
+                  top: 10.0,
+                  bottom: 10.0, /*left: 5.0*/
+                ),
                 height: 400,
                 width: double.infinity,
                 color: const Color(0xff051094),
                 child: Row(
-                  //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     IconButton(
                       onPressed: () {},
-                      icon: const Icon(Icons.arrow_back_outlined, color: Colors.white,),
+                      icon: const Icon(
+                        Icons.arrow_back_outlined,
+                        color: Colors.white,
+                      ),
                     ),
-                    const SizedBox(width: 25.0),
+                    //const SizedBox(width: 25.0),
                     const Padding(
                       padding: EdgeInsets.symmetric(vertical: 15.0),
                       child: Text(
                         'My Accounts',
-                        style: TextStyle(fontSize: 16.0, color: Colors.white, fontWeight: FontWeight.w600),
+                        style: TextStyle(
+                            fontSize: 16.0,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w600),
                       ),
                     ),
-                    //const Icon(Icons.abc, color: Colors.white,)
+                    IconButton(
+                      onPressed: (){},
+                      icon: const Icon(Icons.settings, color: Colors.white,),
+                    )
                   ],
                 ),
               ),
@@ -76,7 +89,8 @@ class _CurrentBalanceMainScreenLayoutState extends State<CurrentBalanceMainScree
                             color: Colors.grey.withOpacity(0.4),
                             spreadRadius: 0, // extend the shadow
                             blurRadius: 5, // soften the shadow
-                            offset: const Offset(0, 0), // changes position of shadow
+                            offset: const Offset(
+                                0, 0), // changes position of shadow
                           ),
                         ],
                       ),
