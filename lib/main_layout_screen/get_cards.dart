@@ -9,10 +9,17 @@ class GetCards extends StatefulWidget {
 }
 
 class _GetCardsState extends State<GetCards> {
+
   PageController controller = PageController(
     initialPage: 0,
     viewportFraction: 0.9,
   );
+
+  @override
+  void dispose(){
+    controller.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -27,10 +34,10 @@ class _GetCardsState extends State<GetCards> {
             bottom: 50.0,
           ),
           child: PageView(
-            pageSnapping: true,
+            //pageSnapping: true,
             //padEnds: true,
             controller: controller,
-            physics: const BouncingScrollPhysics(),
+            physics: const PageScrollPhysics(),
             scrollDirection: Axis.horizontal,
             children: [
               Container(
@@ -107,7 +114,10 @@ class _GetCardsState extends State<GetCards> {
   }
 
   Widget selectCardContents(
-      String cardType, String monthlyAmount, Color color) {
+    String cardType,
+    String monthlyAmount,
+    Color color,
+  ) {
     return Container(
       padding: const EdgeInsets.all(10.0),
       child: Column(

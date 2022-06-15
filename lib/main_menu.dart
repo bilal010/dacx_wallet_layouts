@@ -2,6 +2,8 @@ import 'package:dacx_wallet_layouts/main_layout_screen/get_cards.dart';
 import 'package:dacx_wallet_layouts/main_layout_screen/main_layout_screen.dart';
 import 'package:flutter/material.dart';
 
+import 'main_layout_screen/current_balance_mls.dart';
+
 class MainMenu extends StatelessWidget {
   const MainMenu({Key? key}) : super(key: key);
 
@@ -40,6 +42,17 @@ class MainMenu extends StatelessWidget {
                 child: const Text('Get Cards'),
               ),
 
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const CurrentBalanceMainScreenLayout(),
+                    ),
+                  );
+                },
+                child: const Text('Current Balance Main Layout'),
+              ),
             ],
           ),
         ),
