@@ -2,6 +2,9 @@ import 'package:dacx_wallet_layouts/main_layout_screen/get_cards.dart';
 import 'package:dacx_wallet_layouts/main_layout_screen/main_layout_screen.dart';
 import 'package:flutter/material.dart';
 
+import 'bottom_navigation_bar/bottom_screen_1.dart';
+import 'bottom_navigation_bar/bottom_screen_2.dart';
+import 'bottom_navigation_bar/bottom_screen_3.dart';
 import 'main_layout_screen/current_balance_mls.dart';
 
 class MainMenu extends StatelessWidget {
@@ -52,6 +55,42 @@ class MainMenu extends StatelessWidget {
                   );
                 },
                 child: const Text('Current Balance Main Layout'),
+              ),
+
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const BottomNavigationBarScreen(),
+                    ),
+                  );
+                },
+                child: const Text('Bottom Navigation Bar # 1'),
+              ),
+
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const BottomNavigationBarScreen2(),
+                    ),
+                  );
+                },
+                child: const Text('Bottom Navigation Bar # 2'),
+              ),
+
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const BottomNavigationBarScreen3(),
+                    ),
+                  );
+                },
+                child: const Text('Bottom Navigation Bar # 3'),
               ),
             ],
           ),

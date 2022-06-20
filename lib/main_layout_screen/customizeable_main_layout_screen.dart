@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class CustomizableMainScreenLayout extends StatelessWidget {
-
   final String heading;
   final Widget child;
   final IconData? icon;
@@ -24,7 +23,8 @@ class CustomizableMainScreenLayout extends StatelessWidget {
               left: 0,
               right: 0,
               child: Container(
-                padding: const EdgeInsets.only(top: 10.0, bottom: 10.0, left: 5.0),
+                padding:
+                    const EdgeInsets.only(top: 10.0, bottom: 10.0, left: 5.0),
                 height: 100,
                 width: double.infinity,
                 color: const Color(0xff051094),
@@ -42,9 +42,10 @@ class CustomizableMainScreenLayout extends StatelessWidget {
                       child: Text(
                         heading,
                         style: const TextStyle(
-                            fontSize: 16.0,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w600),
+                          fontSize: 16.0,
+                          color: Colors.white,
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
                     ),
                     /*IconButton(
