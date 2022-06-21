@@ -97,9 +97,9 @@ class _BottomNavigationBarScreen3State extends State<BottomNavigationBarScreen3>
           type: BottomNavigationBarType.shifting,
           currentIndex: _selectedIndex,
           selectedItemColor: Colors.black,
-          iconSize: 40,
+          iconSize: 20,
           onTap: _onItemTapped,
-          elevation: 5
+          elevation: 5, //5
       ),
     );
   }

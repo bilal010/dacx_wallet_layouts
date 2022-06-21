@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 
-class BottomNavigationBarScreen5 extends StatefulWidget {
-  const BottomNavigationBarScreen5({Key? key}) : super(key: key);
+class BottomNavigationBarScreen6 extends StatefulWidget {
+  const BottomNavigationBarScreen6({Key? key}) : super(key: key);
 
   @override
-  State<BottomNavigationBarScreen5> createState() =>
-      _BottomNavigationBarScreen5State();
+  State<BottomNavigationBarScreen6> createState() => _BottomNavigationBarScreen6State();
 }
 
-class _BottomNavigationBarScreen5State extends State<BottomNavigationBarScreen5> with TickerProviderStateMixin{
+class _BottomNavigationBarScreen6State extends State<BottomNavigationBarScreen6> with TickerProviderStateMixin{
   var renderOverlay = true;
   var visible = true;
   var switchLabelPosition = false;
@@ -23,96 +22,79 @@ class _BottomNavigationBarScreen5State extends State<BottomNavigationBarScreen5>
   var buttonSize = const Size(56.0, 56.0);
   var childrenButtonSize = const Size(56.0, 56.0);
 
-  List<Widget> pages = [
-    const FirstScreen(),
-    const SecondScreen(),
-    const ThirdScreen(),
-    const FourthScreen(),
+
+  int _selectedIndex = 0;
+
+  static const List<Widget> _widgetOptions = <Widget>[
+    FirstScreen(),
+    SecondScreen(),
+    ThirdScreen(),
+    FourthScreen()
   ];
 
-  int currentIndex = 0;
-
-  PageController myPage = PageController(initialPage: 0);
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBody: true,
       appBar: AppBar(
-        title: const Text('Bottom Navigation Bar # 5'),
+        title: const Text('Bottom Navigation Bar # 6'),
+        elevation: 0,
         backgroundColor: Colors.pink,
       ),
 
-      // The bottom navigation bar
-      bottomNavigationBar: BottomAppBar(
-        color: Colors.pink,
-        // this creates a notch in the center of the bottom bar
-        shape: const CircularNotchedRectangle(),
-        notchMargin: 6,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            IconButton(
-              icon: const Icon(
-                Icons.home,
-                color: Colors.white,
-              ),
-              onPressed: () {
-                setState(() {
-                  myPage.jumpToPage(0);
-                });
-              },
-            ),
-            IconButton(
-              icon: const Icon(
-                Icons.people,
-                color: Colors.white,
-              ),
-              onPressed: () {
-                setState(() {
-                  myPage.jumpToPage(1);
-                });
-              },
-            ),
-            const SizedBox(
-              width: 20,
-            ),
-            IconButton(
-              icon: const Icon(
-                Icons.notifications,
-                color: Colors.white,
-              ),
-              onPressed: () {
-                setState(() {
-                  myPage.jumpToPage(2);
-                });
-              },
-            ),
-            IconButton(
-              icon: const Icon(
-                Icons.settings,
-                color: Colors.white,
-              ),
-              onPressed: () {
-                setState(() {
-                  myPage.jumpToPage(3);
-                });
-              },
-            ),
-          ],
+      body: SafeArea(
+        bottom: false,
+        child: Center(
+          child: _widgetOptions.elementAt(_selectedIndex),
         ),
       ),
-      body: PageView(
-        controller: myPage,
-        onPageChanged: (int) {
-          print('Page Changes to index $int');
-        },
-        physics: const NeverScrollableScrollPhysics(),
-        children: const [
-          FirstScreen(),
-          SecondScreen(),
-          ThirdScreen(),
-          FourthScreen(),
-        ], // Comment this if you need to use Swipe.
+      // The bottom navigation bar
+      bottomNavigationBar: BottomAppBar(
+        //color: Colors.pinkAccent.shade100,
+        color: Colors.pink.withAlpha(255),
+        // this creates a notch in the center of the bottom bar
+        shape: const CircularNotchedRectangle(),
+        elevation: 0,
+        notchMargin: 2,//6
+        child: BottomNavigationBar(
+          //backgroundColor: Colors.pink,
+          backgroundColor: Colors.pink.withAlpha(0),
+          elevation: 0,
+          items: const [
+            BottomNavigationBarItem(
+                icon: Icon(Icons.home),
+                label: 'Home',
+            ),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.person),
+                label: 'Account',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.wallet_outlined),
+              label: 'Wallet',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.monetization_on),
+              label: 'Wealth',
+            ),
+          ],
+          type: BottomNavigationBarType.fixed,
+          currentIndex: _selectedIndex,
+          selectedIconTheme: const IconThemeData(color: Colors.black),
+          unselectedIconTheme: const IconThemeData(color: Colors.grey),
+          selectedLabelStyle: const TextStyle(color: Colors.black),
+          unselectedLabelStyle: const TextStyle(color: Colors.grey),
+          selectedItemColor: Colors.black,
+          unselectedItemColor: Colors.grey,
+          iconSize: 20, //25
+          onTap: _onItemTapped,
+        ),
       ),
       // implement the floating button
       floatingActionButton: SpeedDial(
@@ -213,8 +195,6 @@ class _BottomNavigationBarScreen5State extends State<BottomNavigationBarScreen5>
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
-
-
 }
 
 
@@ -225,7 +205,7 @@ class FirstScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Center(
-        child: Text('First Screen'),
+        child: Text('Home Screen'),
       ),
     );
   }
@@ -238,7 +218,7 @@ class SecondScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Center(
-        child: Text('Second Screen'),
+        child: Text('Account Screen'),
       ),
     );
   }
@@ -251,7 +231,7 @@ class ThirdScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Center(
-        child: Text('Third Screen'),
+        child: Text('Wallet Screen'),
       ),
     );
   }
@@ -265,7 +245,7 @@ class FourthScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Center(
-        child: Text('Fourth Screen'),
+        child: Text('Wealth Screen'),
       ),
     );
   }
