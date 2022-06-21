@@ -37,6 +37,8 @@ dependencies:
   device_preview: ^1.1.0
   spincircle_bottom_bar: ^2.0.0
   animated_floating_buttons: ^0.0.2
+  speed_dial_fab: ^2.2.1
+  flutter_speed_dial: ^6.0.0
 
 dev_dependencies:
   flutter_test:

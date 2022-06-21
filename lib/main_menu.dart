@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'bottom_navigation_bar/bottom_screen_1.dart';
 import 'bottom_navigation_bar/bottom_screen_2.dart';
 import 'bottom_navigation_bar/bottom_screen_3.dart';
+import 'bottom_navigation_bar/bottom_screen_4.dart';
+import 'bottom_navigation_bar/bottom_screen_5.dart';
 import 'main_layout_screen/current_balance_mls.dart';
 
 class MainMenu extends StatelessWidget {
@@ -86,11 +88,23 @@ class MainMenu extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const BottomNavigationBarScreen3(),
+                      builder: (context) => const BottomNavigationBarScreen4(),
                     ),
                   );
                 },
-                child: const Text('Bottom Navigation Bar # 3'),
+                child: const Text('Bottom Navigation Bar # 4'),
+              ),
+
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const BottomNavigationBarScreen5(),
+                    ),
+                  );
+                },
+                child: const Text('Bottom Navigation Bar # 5'),
               ),
             ],
           ),
