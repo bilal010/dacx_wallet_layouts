@@ -1,4 +1,5 @@
 import 'package:dacx_wallet_layouts/bottom_navigation_bar/bottom_screen_6.dart';
+import 'package:dacx_wallet_layouts/flutter_notifications/notifications_1/notification_screen1.dart';
 import 'package:dacx_wallet_layouts/main_layout_screen/get_cards.dart';
 import 'package:dacx_wallet_layouts/main_layout_screen/login_screen.dart';
 import 'package:dacx_wallet_layouts/main_layout_screen/main_layout_screen.dart';
@@ -131,6 +132,18 @@ class MainMenu extends StatelessWidget {
                   );
                 },
                 child: const Text('Login Screen'),
+              ),
+
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const NotificationScreen1(),
+                    ),
+                  );
+                },
+                child: const Text('Notification Screen # 1'),
               ),
             ],
           ),

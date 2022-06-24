@@ -9,6 +9,7 @@ class BottomNavigationBarScreen6 extends StatefulWidget {
 }
 
 class _BottomNavigationBarScreen6State extends State<BottomNavigationBarScreen6> with TickerProviderStateMixin{
+
   var renderOverlay = true;
   var visible = true;
   var switchLabelPosition = false;
