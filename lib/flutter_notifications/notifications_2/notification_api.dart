@@ -11,6 +11,7 @@ import 'package:flutter_native_timezone/flutter_native_timezone.dart';
 // Custom Sound, No Sound, With Image
 
 class NotificationApi {
+
   static final _notifications = FlutterLocalNotificationsPlugin();
   static final onNotifications = BehaviorSubject<String?>();
 
