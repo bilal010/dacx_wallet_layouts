@@ -3,14 +3,20 @@ import 'package:flutter/material.dart';
 
 import 'main_menu.dart';
 
-void main() {
+/*void main() {
   runApp(
     DevicePreview(
       //enabled: !kReleaseMode,
       builder: (context) => const MyApp(), // Wrap your app
     )
   );
+}*/
+
+
+void main() {
+  runApp(const MyApp());
 }
+
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
