@@ -1,4 +1,5 @@
 import 'package:dacx_wallet_layouts/bottom_navigation_bar/bottom_screen_6.dart';
+import 'package:dacx_wallet_layouts/flutter_notifications/awesome_notifications/awesome_notification_home.dart';
 import 'package:dacx_wallet_layouts/flutter_notifications/notifications_1/notification_screen1.dart';
 import 'package:dacx_wallet_layouts/flutter_notifications/notifications_2/notification_screen2.dart';
 import 'package:dacx_wallet_layouts/main_layout_screen/get_cards.dart';
@@ -157,6 +158,18 @@ class MainMenu extends StatelessWidget {
                   );
                 },
                 child: const Text('Notification Screen # 2'),
+              ),
+
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const AwesomeNotificationHomePage(),
+                    ),
+                  );
+                },
+                child: const Text('Awesome Notification'),
               ),
             ],
           ),
