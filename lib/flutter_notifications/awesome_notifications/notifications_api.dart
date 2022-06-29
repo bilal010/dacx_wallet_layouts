@@ -33,20 +33,13 @@ class AwesomeNotificationApi {
           label: 'Mark Done',
         ),
       ],
-      /*schedule: NotificationCalendar(
+      schedule: NotificationCalendar(
         weekday: notificationSchedule.dayOfTheWeek,
         hour: notificationSchedule.timeOfDay.hour,
         minute: notificationSchedule.timeOfDay.minute,
         second: 0,
         millisecond: 0
-      ),*/
-        schedule: NotificationCalendar(
-            weekday: notificationSchedule.dayOfTheWeek,
-            hour: notificationSchedule.timeOfDay.hour,
-            minute: notificationSchedule.timeOfDay.minute,
-            second: 0,
-            millisecond: 0
-        )
+      ),
     );
   }
 }
